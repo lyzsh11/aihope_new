@@ -1,0 +1,77 @@
+/* CSS Document */
+.iframe_header {
+	height:150px;
+	overflow:hidden;
+}
+
+.title {
+	width:609px;
+	height:45px;
+	overflow:hidden;
+	font-size: 24px;
+	font-family: "微软雅黑";
+	letter-spacing: 5px;
+	overflow: hidden;
+	background: url(../image/text_h2.png) bottom no-repeat;
+}
+
+.content {
+	overflow:hidden;
+	padding:20px;
+}
+
+.left_tag {
+	color: #575757;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+
+.box_in {
+	height: auto;
+	width: auto;
+	margin-top: 20px;
+	overflow:hidden;
+}
+
+.radio_text {
+	color: #3B514E;
+	height: 30px;
+	width: 180px;
+	align-content: center;
+	margin-left: 20px;
+	float:left;
+	font-weight: bold;
+	font-size: 24px;
+	font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+
+@media (max-width:1199px) {
+.iframe_header {
+	height:100px;
+}
+}
+
+@media (max-width:991px) {
+.iframe_header {
+	height:98px;
+}
+
+@media (max-width:767px){
+.iframe_header {
+	height:95px;
+}
+	
+.title {
+	width: 280px;
+	margin-right: 20px;
+	font-size: 20px;
+	height: 40px;
+}
+
+.radio_text {
+	margin-left: 10px;
+	width: 70px;
+	font-size: 18px;
+}
+}

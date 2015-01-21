@@ -1,0 +1,120 @@
+/* CSS Document */
+.logo {
+	height: 40px;
+	margin-top: 5px;
+	margin-left: 15px;
+}
+
+.top {
+	height: 60px;
+	overflow: hidden;
+	border: none;
+}
+
+.text {
+	margin-top:18px;
+	margin-right:20px;
+	float:right;
+}
+
+.text a{
+	font-family: 微软雅黑;
+	font-size: 14px;
+	text-align: center;
+	letter-spacing: 2px;
+	color: #3d9670;
+	text-decoration: none;
+}
+
+.text a:hover {
+	text-decoration:underline;
+}
+
+.nav {
+	height: 38px;
+	background: #7ebe85;
+}
+
+.nav_inner {
+	height: 38px;
+	overflow:hidden;
+}
+
+.nav_item {
+	height: 38px;
+	width: 75px;
+	padding-top:6px;
+	font-family: 微软雅黑;
+	font-size: 14px;
+	text-align: center;
+	letter-spacing: 2px;
+	color: #FFFFFF;
+	float: left;
+	overflow:hidden;
+}
+
+.nav_item:hover {
+	background-color: #4aa77f;
+}
+
+a {
+	text-decoration: none;
+}
+
+@media (min-width:768px){
+.logo {
+	height: 45px;
+	margin-top: 10px;
+}
+
+.top {
+	overflow: hidden;
+	border: none;
+	margin: 0px;
+}
+
+.nav {
+	height: 45px;
+}
+
+.nav_inner {
+	height: 45px;
+	margin-left: 50px;
+}
+
+.nav_item {
+	height: 45px;
+	width: 100px;
+	padding: 10px;
+	margin-left: 20px;
+	font-size: 18px;
+}
+}
+
+@media (min-width:992px) {
+.logo {
+	height: 65px;
+	margin-top: 10px;
+}
+
+.top {
+	height: 90px;
+	overflow: hidden;
+	border: none;
+	margin: 0px;
+}
+
+.text {
+	margin-top:30px;
+}
+
+.text a{
+	font-size: 18px;
+}
+
+.nav_item {
+	width: 120px;
+	margin-left: 40px;
+}
+
+}

@@ -1,0 +1,68 @@
+/* CSS Document */
+.iframe_header {
+	height:150px;
+	overflow:hidden;
+}
+
+.title {
+	width:609px;
+	height:40px;
+	overflow:hidden;
+	font-size: 24px;
+	font-family: "微软雅黑";
+	letter-spacing: 5px;
+	overflow: hidden;
+	background: url(../image/text_h2.png) bottom no-repeat;
+}
+
+.content {
+	margin-top: 15px;
+	padding-bottom: 30px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 19px;
+	color: #220f00;
+	letter-spacing: 2px;
+	line-height: 30px;
+	font-weight: 500;
+}
+
+.content a {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 19px;
+	color: #220f00;
+	letter-spacing: 2px;
+	line-height: 30px;
+	text-decoration: underline;
+}
+
+.content a:hover {
+	color:#FF8600;
+}
+
+@media (max-width:1199px) {
+.iframe_header {
+	height:100px;
+}
+}
+
+@media (max-width:991px) {
+.iframe_header {
+	height:98px;
+}
+}
+
+@media (max-width:767px){
+.iframe_header {
+	height:95px;
+}
+	
+.title {
+	width: 280px;
+	margin-right: 20px;
+	font-size: 20px;
+	height: 40px;
+}
+}
+
+
+

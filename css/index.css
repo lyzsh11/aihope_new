@@ -1,0 +1,288 @@
+﻿/* CSS Document */
+.iframe_header {
+	height:150px;
+	overflow:hidden;
+}
+
+#carousel {
+	height:300px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.num {
+	position:relative;
+	margin-top: -30px;
+	margin-left: 20px;
+	float: none;
+}
+
+li {
+	background: url(../image/no_select.png);
+	width: 21px;
+	height: 21px;
+	text-align: center;
+	color: #FFFFFF;
+	list-style:none;
+	float:left;
+	margin-right:8px;
+}
+
+li:hover {
+	background: url(../image/selected.png);
+	color: #000000;
+}
+
+.select {
+	background: url(../image/selected.png);
+	color: #000000;
+}
+
+.img_mask {
+	position:relative;
+	background-color: rgba(0,0,0,0.80);
+	margin-top: -300px;
+	height: 300px;
+	width: 400px;
+	float: right;
+	padding: 15px;
+}
+
+.mask_title {
+	font-size: 16px;
+	color: #FFFFFF;
+	font-family: 微软雅黑;
+	font-weight: bold;
+}
+
+.mask_title a {
+	font-size: 16px;
+	color: #FFFFFF;
+	font-family: 微软雅黑;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.mask_content {
+	height: 120px;
+	overflow: hidden;
+}
+
+.mask_content a{
+	font-size: 13px;
+	color: #FFFFFF;
+	font-family: 微软雅黑;
+	text-decoration: none;
+}
+
+.mask_content a:hover {
+	text-decoration: underline;
+}
+
+#progress_bar {
+	width: 197px;
+	background: url(../image/progress_bar.png) no-repeat center;
+	overflow: hidden;
+}
+
+#progress_text {
+	font-size: 13px;
+	color: #FFFFFF;
+	font-family: 微软雅黑;
+}
+
+.auto_manage_titie {
+	height: 30px;
+}
+
+.auto_manage_titie a {
+	font-family: 微软雅黑;
+	color: #3d9670;
+	font-size: 17px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.auto_manage_titie a:hover {
+	text-decoration:underline;
+}
+
+.auto_manage_content {
+	height: 60px;
+	overflow: hidden;
+}
+
+.auto_manage_content a {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.auto_manage_content a:hover {
+	text-decoration: underline;
+}
+
+.teacher_title {
+	border-bottom: #9c8964 thin dotted;
+	height: 30px;
+	margin-top: 20px;
+}
+
+.teacher_title a {
+	font-family: 微软雅黑;
+	color: #3d9670;
+	font-size: 17px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.teacher_title a:hover {
+	text-decoration: underline;
+}
+
+.teacher_content {
+	margin-top: 15px;
+	height: 60px;
+	overflow: hidden;
+}
+
+.teacher_content a {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.teacher_content a:hover {
+	text-decoration: underline;
+}
+
+.right_title {
+	height: 45px;
+	color: #FFFFFF;
+	padding: 9px;
+	padding-left: 15px;
+	background-color: #ac9e94;
+	font-family: 微软雅黑;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 4px;
+}
+
+.weixin_content {
+	margin-top: 10px;
+	overflow: hidden;
+	margin-left: 10px;
+	height: 250px;
+	padding-bottom: 30px;
+}
+
+.weixin_content_in {
+	height: 25px;
+	width: inherit;
+	overflow: hidden;
+	margin-top: 3px;
+}
+
+.weixin_content_in a {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.weixin_content_in a:hover {
+	text-decoration:underline;
+}
+
+.right {
+	padding-left:15px; 
+	padding-right:0;
+}
+
+
+.header_info_text {
+	font-family: 微软雅黑;
+	color: rgba(20,75,68,1.00);
+	font-size: 15px;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+.image_banner {
+	width: 1150px;
+}
+
+@media (max-width:1199px) {
+.iframe_header {
+	height:100px;
+}
+
+#carousel {
+	height: 250px;
+}
+
+.img_mask {
+	margin-top: -250px;
+	height: 250px;
+	width: 300px;
+}
+
+.mask_content {
+	height: 100px;
+}
+
+.image_banner {
+	width: 950px;
+}
+}
+
+@media (max-width:991px) {
+.iframe_header {
+	height:98px;
+}
+
+#carousel {
+	margin-top: 5px;
+	height: 200px;
+}
+
+.right {
+	padding-left: 0px;
+	margin-top: 30px;
+}
+
+.img_mask {
+	margin-top: -200px;
+	height: 200px;
+	width: 300px;
+}
+
+.mask_content {
+	height: 50px;
+}
+
+.image_banner {
+	width: 730px;
+}
+}
+
+@media (max-width:767px) {
+.iframe_header {
+	height:95px;
+}
+
+#carousel {
+	display: none;
+}
+
+}

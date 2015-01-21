@@ -1,0 +1,139 @@
+/* CSS Document */
+.iframe_header {
+	height:150px;
+	overflow:hidden;
+}
+
+.title {
+	width:609px;
+	height:40px;
+	overflow:hidden;
+	background: url(../image/text_h2.png) bottom no-repeat;
+	font-size: 20px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	letter-spacing: 5px;
+	overflow: hidden;
+}
+
+.auto_manage_titie {
+	height: 30px;
+}
+
+.auto_manage_titie a {
+	font-family: 微软雅黑;
+	color: #3d9670;
+	font-size: 17px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.auto_manage_titie a:hover {
+	text-decoration:underline;
+}
+
+.auto_manage_content {
+	height: 60px;
+	overflow: hidden;
+}
+
+.auto_manage_content a {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.auto_manage_content a:hover {
+	text-decoration: underline;
+}
+
+.teacher_title {
+	border-bottom: #9c8964 thin dotted;
+	height: 30px;
+}
+
+.teacher_title a {
+	font-family: 微软雅黑;
+	color: #3d9670;
+	font-size: 17px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.teacher_title a:hover {
+	text-decoration: underline;
+}
+
+.teacher_content {
+	margin-top: 15px;
+	height: 60px;
+	overflow: hidden;
+}
+
+.teacher_content a {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.teacher_content a:hover {
+	text-decoration: underline;
+}
+
+.title_h2 {
+	margin-left: 50px;
+	margin-top:8px;
+}
+
+.title_h2 a {
+	font-size: 16px;
+	font-family: "微软雅黑";
+	letter-spacing: 2px;
+	text-decoration: none;
+	color: #000;
+}
+
+.title_h2 a:hover {
+	text-decoration:underline;
+}
+
+@media (max-width:1199px) {
+.iframe_header {
+	height:100px;
+}
+}
+
+@media (max-width:991px) {
+.iframe_header {
+	height:98px;
+}
+}
+
+@media (max-width:767px){
+.iframe_header {
+	height:95px;
+}
+
+.title_h1 a {
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+.title_h2 {
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
+.title_h2 a {
+	font-size: 8px;
+	letter-spacing: 1px;
+}
+}
