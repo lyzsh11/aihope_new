@@ -8,7 +8,7 @@ if (isset($_POST["loginsubmit"])) {
     require_once ($path."db.php") ;
 
     $db_con = @mysql_connect($dbhost, $dbuser, $dbpasswd) or die;//(echo "抱歉！系统内部发生错误。请联系<a href='mailto:service@aihope.org'>站长</a>" && die);
-    @mysql_select_db("userS");
+    @mysql_select_db("teachers");
     $sql="update user set last_login=NOW() , login_num=login_num+1 where id='"
         .$id
         ."' and passwd='"
@@ -24,7 +24,7 @@ if (isset($_POST["loginsubmit"])) {
         //die;
     } else {
         //ob_start();
-        setcookie("userid", $id, time()+3600*72);
+        setcookie("userid", $id, time()+3600*72, "/");
         //ob_get_clean();
         //可跳转到个人中心  
         require("jump.php");
@@ -59,7 +59,7 @@ if (isset($_POST["loginsubmit"])) {
             echo '<script> alert("创建用户失败，请换一个用户名"); </script>';//.mysql_error();
             echo $errormsg;
         } else {
-            setcookie("userid",$_POST["id"], time()+3600*72);
+            setcookie("userid",$_POST["id"], time()+3600*72, "/");
             echo "创建用户成功，已登录!";
             //可跳转到个人中心  
             require("jump.php");
@@ -90,11 +90,11 @@ if (isset($_POST["loginsubmit"])) {
         $loginradio="";
     }
 ?>
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="css/form_upload.css" rel="stylesheet" type="text/css"/>
-<link href="css/header.css" rel="stylesheet" type="text/css"/>
-<script src="js/jquery-2.1.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<link href="../aihope/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../aihope/css/form_upload.css" rel="stylesheet" type="text/css"/>
+<link href="../aihope/css/header.css" rel="stylesheet" type="text/css"/>
+<script src="..aihope/js/jquery-2.1.1.min.js"></script>
+<script src="../aihope/js/bootstrap.min.js"></script>
 <script>
 function show_hide(id1,id2){
 	div1=document.getElementById(id1);
@@ -107,7 +107,7 @@ function show_hide(id1,id2){
 
 <body style="background: #dbdcd1">
 <div class="container">
-	<iframe src="header.php" scrolling="no" frameborder="0" width="100%" class="iframe_header"></iframe>
+	<iframe src="../aihope/header.php" scrolling="no" frameborder="0" width="100%" class="iframe_header"></iframe>
     <div style="margin: 0px; padding-top:15px; padding-bottom: 30px">
     	<div class="title">
         	<input style="float:left; margin-top:8px" type="radio" name="register_login" onClick="show_hide('register','login')" <?php echo $regradio ?>/><div class="radio_text">注册</div>
@@ -173,7 +173,7 @@ function show_hide(id1,id2){
         </div>
         </form>
     </div>
-    <iframe src="footer.php" scrolling="no" frameborder="0" width="100%" height="100px" style="margin-top:10px"></iframe>
+    <iframe src="../aihope/footer.php" scrolling="no" frameborder="0" width="100%" height="100px" style="margin-top:10px"></iframe>
 </div>
 </body>
 </html>

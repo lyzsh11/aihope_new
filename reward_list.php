@@ -39,7 +39,7 @@
                 echo '<a href="'.$teacher['shopurl'].'" style="float:right">我来帮TA</a></div>';
                 echo '<div class="row">';
                 echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" style="margin-top:20px">';
-                echo '<a href="'.$teacher['url'].'"><img src="'.$teacher['pic'].'" width="120px" height="120px"/></a></div>';
+                echo '<a href="'.$teacher['url'].'"><img src="'.$teacher['picSmall'].'" width="120px" height="120px"/></a></div>';
                 echo '<div class="col-lg-10 col-md-9 col-sm-8 col-xs-12 teacher_content" style="margin-top:20px; height:120px; overflow:hidden"><a href="'.$teacher['url'].'">'.$teacher['info'].'</a></div>';
                 echo '</div></div>';
             }

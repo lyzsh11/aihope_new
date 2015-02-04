@@ -26,8 +26,8 @@
 
         while ($bankdeal = (mysql_fetch_array($dbres))) {
             echo '<div class="header_info_text" style="margin-top: 10px">';
-            echo '<img src="#" style="float:left"/>';
-            echo '<p style="margin-left:10px">'.$bankdeal['time'].' '.$bankdeal['memo'].'';
+            echo '<img src="image/money_icon.png" style="float:left" height=20/>';
+            echo '<p style="margin-left:20px">'.$bankdeal['time'].' '.$bankdeal['memo'].'';
             if (($bankdeal['dealername'] != null) &&
                            ($bankdeal['dealername'] != "")) {
                  echo '——'.$bankdeal['payee'].'';
@@ -42,8 +42,8 @@
 
         while ($article = (mysql_fetch_array($dbres))) {
             echo '<div class="header_info_text" style="margin-top: 10px">';
-            echo '<img src="#" style="float:left"/>';
-            echo '<p style="margin-left:10px">'.$article['title'].'</p>';
+            echo '<img src="image/notify_icon.png" style="float:left" height=20/>';
+            echo '<p style="margin-left:20px">'.$article['title'].'</p>';
             echo '</div>';
             break;
         }

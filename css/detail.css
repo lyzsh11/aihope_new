@@ -1,0 +1,127 @@
+/* CSS Document */
+.iframe_header {
+	height:150px;
+	overflow:hidden;
+}
+.title {
+	width:609px;
+	height:40px;
+	margin-top: 20px;
+	overflow:hidden;
+	font-size: 24px;
+	font-family: "微软雅黑";
+	letter-spacing: 5px;
+	overflow: hidden;
+	background: url(../image/text_h2.png) bottom no-repeat;
+}
+
+.content {
+	margin-top: 15px;
+	padding-bottom: 30px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 16px;
+	color: #220f00;
+	letter-spacing: 2px;
+	line-height: 30px;
+	font-weight: 500;
+}
+
+.content a {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 16px;
+	color: #220f00;
+	letter-spacing: 2px;
+	line-height: 30px;
+	text-decoration: underline;
+}
+
+.content a:hover {
+	color:#FF8600;
+}
+
+.content_image {
+	width: 700px;
+}
+
+.comment {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+.comment a {
+	color: #663322;
+	text-decoration: none;
+}
+
+.comment a:hover {
+	text-decoration: underline;
+}
+
+.comment_title {
+	height: 40px;
+	border-bottom: #636363 thin solid;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 28px;
+	letter-spacing: 4px;
+}
+
+.comment_box {
+	margin-top: 20px;
+	padding: 5px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	font-size: 13px;
+}
+
+.comment_box a {
+	color: #663322;
+	text-decoration: none;
+}
+
+.comment_box a:hover {
+	text-decoration: underline;
+}
+
+.line_gray {
+	height: 1px;
+	background-color: #BDBDBD;
+	margin: 5px;
+	margin-top: 10px;
+}
+
+.comment_post {
+	margin-top: 20px;
+	padding: 6px;
+}
+
+@media (max-width:1199px) {
+.iframe_header {
+	height:100px;
+}
+}
+
+@media (max-width:991px) {
+.iframe_header {
+	height:98px;
+}
+
+.content_image {
+	width: 500px;
+}
+}
+
+@media (max-width:767px){
+.iframe_header {
+	height:98px;
+}
+.title {
+	width: 280px;
+	margin-right: 20px;
+	font-size: 20px;
+	height: 40px;
+}
+.content_image {
+	width: 300px;
+}
+}
