@@ -5,12 +5,26 @@ if(!isset($_COOKIE['userid'])) {
     $jumpdest = "add_article.php";
     require("login_register.php");
 } else {
+    require_once ($path."db.php");
+	$db_con = @mysql_connect($dbhost, $dbuser, $dbpasswd) or die;
+	@mysql_select_db($dbname);
     //TODO: 检查用户的权限  
+    $uid = $_COOKIE['userid'];
+	$requiredperm = $PERM_POST;
+	#require("check_perm.php");
+	$sql="select id,permission from user where id=\"$uid\"";
+	$dbres = mysql_query($sql, $db_con);
+	//echo "DEBUG 2<br>";
+	($dbline = (mysql_fetch_array($dbres))) or die;
+	//echo "DEBUG 3:".$dbline."<br>";
+	$perm = 0+$dbline['permission'];
+	//echo "DEBUG 4:".$perm."<br>";
+	if( ($perm & $requiredperm) == false) {
+		echo "抱歉，您的权限不足！<br>";
+		die;
+	}
 
     if(isset($_POST["addarticle"])) {
-        require_once ($path."db.php");
-        $db_con = @mysql_connect($dbhost, $dbuser, $dbpasswd) or die;
-        @mysql_select_db($dbname);
         $sql="insert into article (title, type, pic, link, create_time) values ('"
             .$_POST["title"]
             ."', "
@@ -25,8 +39,8 @@ if(!isset($_COOKIE['userid'])) {
                     echo "$sql 插入数据库失败: ".mysql_error()."<br>\n";
         }
 
-        mysql_close($db_con);
     }
+    mysql_close($db_con);
 ?>
 <!doctype html>
 <html>
