@@ -76,7 +76,7 @@ if(!isset($_COOKIE['userid'])) {
 		$bankcontent = $_POST["bankcontent"];
 		$deals = preg_split("/\n/", $_POST["bankcontent"]);
 		echo "<input type=hidden name=bankcontent value=\"$bankcontent\" />";
-		$last = 0.0 + $_POST["lastamount"];
+		$last = 0.0 + str_replace(",", "", $_POST["lastamount"]);
 		echo "<input type=hidden name=lastamount value=\"$last\" />";
 		$unit = 100; //分->元的换算  
 		$money = 0.0;
