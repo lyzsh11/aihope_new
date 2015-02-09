@@ -11,18 +11,7 @@ if(!isset($_COOKIE['userid'])) {
     //TODO: 检查用户的权限  
     $uid = $_COOKIE['userid'];
 	$requiredperm = $PERM_POST;
-	#require("check_perm.php");
-	$sql="select id,permission from user where id=\"$uid\"";
-	$dbres = mysql_query($sql, $db_con);
-	//echo "DEBUG 2<br>";
-	($dbline = (mysql_fetch_array($dbres))) or die;
-	//echo "DEBUG 3:".$dbline."<br>";
-	$perm = 0+$dbline['permission'];
-	//echo "DEBUG 4:".$perm."<br>";
-	if( ($perm & $requiredperm) == false) {
-		echo "抱歉，您的权限不足！<br>";
-		die;
-	}
+	require("check_perm.php");
 
     if(isset($_POST["addarticle"])) {
         $sql="insert into article (title, type, pic, link, create_time) values ('"
