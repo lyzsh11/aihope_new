@@ -16,14 +16,14 @@ if(!isset($_COOKIE['userid'])) {
 
     if(isset($_POST["addbanklog"])) {
 		//echo $_POST["bankcontent"];
-		echo "DEBUG 1<br>";
+		//echo "DEBUG 1<br>";
 		$succ = true;
 		$i = 0;
 		while (true) {
-			++$i;
 			if(!isset($_POST["money$i"])) {
 				break;
 			}
+			++$i;
 			$time = $_POST["time$i"];
 			$money = $_POST["money$i"];
 			$payee = $_POST["payee$i"];
@@ -79,7 +79,7 @@ if(!isset($_COOKIE['userid'])) {
 		$last = 0.0 + $_POST["lastamount"];
 		echo "<input type=hidden name=lastamount value=\"$last\" />";
 		$unit = 100; //分->元的换算  
-		$money = 0;
+		$money = 0.0;
 		$i=0;
 		foreach ($deals as $log) {
 				++$i;
@@ -90,7 +90,8 @@ if(!isset($_COOKIE['userid'])) {
 					continue;
 				}
 				$time = array_shift($items)." ".array_shift($items);
-				$money = $unit * (0.0+array_shift($items));
+				$money = str_replace(",", "", array_shift($items));
+				$money = $unit * (0.0+$money);
 				$nowtotal = 0.0 + array_shift($items);
 				$channel = substr(array_shift($items), 0, 12);
 				$memo = "UNINIT";

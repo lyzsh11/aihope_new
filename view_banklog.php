@@ -24,7 +24,7 @@
         $db_con = @mysql_connect($dbhost, $dbuser, $dbpasswd) or $my_err = true;
         @mysql_select_db($dbname);
         //$sql="insert into teacher (name,create_time) values (\"测试3\",CURTIME())";
-        $sql="select * from bankdeal";
+        $sql="select * from bankdeal order by time desc";
         $dbres = mysql_query($sql, $db_con);
         $i = 0;
             {
