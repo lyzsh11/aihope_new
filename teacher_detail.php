@@ -1,21 +1,22 @@
 <?php
 $path="../";
-$dir="../aihope/";
-if (isset($_POST["comment"]) && !isset($_COOKIE['userid'])) {
-    echo '<script>alert("您未登陆，请先登陆！");</script>';
-    $jumpdest = "../WangChengXia/teacher_detail.php";
-    require($dir."login_register.php");
-} else {
-    if (isset($_POST["comment"])) {
-        require_once ($path."db.php");
-        $db_con = @mysql_connect($dbhost, $dbuser, $dbpasswd) or die;
-        @mysql_select_db($dbname);
+$dir="";//../aihope/";
+require_once ($path."db.php");
+$db_con = @mysql_connect($dbhost, $dbuser, $dbpasswd) or die;
+@mysql_select_db($dbname);
+if (isset($_POST["comment"])) {
+    if(!isset($_COOKIE['userid'])) {
+        echo '<script>alert("您未登陆，请先登陆！");</script>';
+        $jumpdest = "teacher_detail.php";
+        require($dir."login_register.php");
+    } else {
         $sql="insert into comment values (\"\", 2, '".$_COOKIE['userid']."', now(), '".$_POST["content"]."')";
         $dbres = mysql_query($sql, $db_con);
         if (!$dbres) { 
             echo "$sql 插入数据库失败: ".mysql_error()."<br>\n";
         }
     }
+}
 ?>
 <!doctype html>
 <html>
@@ -102,5 +103,5 @@ if (isset($_POST["comment"]) && !isset($_COOKIE['userid'])) {
 </body>
 </html>
 <?php
-}  
+//}  
 ?>
