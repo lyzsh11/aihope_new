@@ -20,10 +20,10 @@ if(!isset($_COOKIE['userid'])) {
 		$succ = true;
 		$i = 0;
 		while (true) {
+			++$i;
 			if(!isset($_POST["money$i"])) {
 				break;
 			}
-			++$i;
 			$time = $_POST["time$i"];
 			$money = $_POST["money$i"];
 			$payee = $_POST["payee$i"];
@@ -39,6 +39,7 @@ if(!isset($_COOKIE['userid'])) {
 					break;
 			}
         } 
+		--$i;
 		if ($succ) {
 			echo "$i 条记录入库成功<br>\n";
 		}

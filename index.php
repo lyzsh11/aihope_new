@@ -4,10 +4,11 @@
 <!doctype html>
 <html>
 <head>
+<meta name="baidu-site-verification" content="X1GQFmfGBJ" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>爱心帮首页</title>
+<title>爱心帮 - 爱心帮教:奖赠教师,支持教育,开拓未来</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="css/index.css" rel="stylesheet" type="text/css"/>
 <script src="js/ellipsis.js"></script>
@@ -23,16 +24,22 @@
         @mysql_select_db($dbname);
         $sql="select * from bankdeal order by time desc";
         $dbres = mysql_query($sql, $db_con);
-
         while ($bankdeal = (mysql_fetch_array($dbres))) {
             echo '<div class="header_info_text" style="margin-top: 10px">';
             echo '<img src="image/money_icon.png" style="float:left" height=20/>';
-            echo '<p style="margin-left:20px">'.$bankdeal['time'].' '.$bankdeal['memo'].'';
+	    $money = $bankdeal['money']/100.0;
+	    if ($money < 0) {
+	    	$money = -$money;
+		$type = '[捐出] ';
+	    } else {
+	    	$type = '[捐赠] ';
+	    }
+            echo '<a href="view_banklog.php" style="margin-left:20px">'.$bankdeal['time'].' '.$type.$bankdeal['memo'].' '.$money.'元';
             if (($bankdeal['dealername'] != null) &&
                            ($bankdeal['dealername'] != "")) {
                  echo '——'.$bankdeal['payee'].'';
             }
-            echo '</p>';
+            echo '</a>';
             echo '</div>';
             break;
         }
@@ -43,12 +50,12 @@
         while ($article = (mysql_fetch_array($dbres))) {
             echo '<div class="header_info_text" style="margin-top: 10px">';
             echo '<img src="image/notify_icon.png" style="float:left" height=20/>';
-            echo '<p style="margin-left:20px">'.$article['title'].'</p>';
+            echo '<a href="'.$article['link'].'" style="margin-left:20px">'.$article['title'].'</a>';
             echo '</div>';
             break;
         }
         //$sql="insert into teacher (name,create_time) values (\"测试3\",CURTIME())";
-        $sql="select * from teacher";
+        $sql="select * from teacher where valid=0"; //只显示valid(验证过的)老师  
         $dbres = mysql_query($sql, $db_con);
     ?>
     <div id="carousel">
@@ -58,14 +65,17 @@
                     $i = -1;
                     while($teacher = (mysql_fetch_array($dbres))) {
                          if ($i >= 0) {
+                            $teacher_page = 'teacher_detail.php?id='.$teacher['id']; //也可以用 $teacher['url']
                             if ($i == 0) {
                                 echo '<p id="pic'.$i.'" style="display:block;  width: inherit">';
-                                echo '<a href="'.$teacher['url'].'"><img src="'.$teacher['picBanner'].'" class="image_banner" onload="initProgress(\''.$teacher['url'].'\','
+                                //echo '<a href="'.$teacher['url'];
+                                echo '<a href="'.$teacher_page;
+                                echo '"><img src="'.$teacher['picBanner'].'" class="image_banner" onload="initProgress(\''.$teacher_page.'\','
                                     .$teacher['moneyDone'].','.$teacher['moneyNeed'].',\''.$teacher['name'].'老师\',\''.$teacher['info'].'\')"/></a>';
                                 echo '</p>';
                             } else {
                                 echo '<p id="pic'.$i.'" style="display:none">';
-                                echo '<a href="'.$teacher['url'].'"><img src="'.$teacher['picBanner'].'" class="image_banner" onload="initProgress(\''.$teacher['url'].'\','
+                                echo '<a href="'.$teacher_page.'"><img src="'.$teacher['picBanner'].'" class="image_banner" onload="initProgress(\''.$teacher_page.'\','
                                     .$teacher['moneyDone'].','.$teacher['moneyNeed'].',\''.$teacher['name'].'老师\',\''.$teacher['info'].'\')"/></a>';
                                 echo '</p>';
                             }
@@ -99,20 +109,22 @@
         $i = 0;
         while($teacher = (mysql_fetch_array($dbres))) {
             if ($i == 0) {
-                echo '<div class="auto_manage_titie" style="margin-top: 30px; margin-left: 5px"><a href="'.$teacher['url'].'">'.$teacher['name'].'老师</a></div>';
+                $teacher_page = $teacher['url'];
+                echo '<div class="auto_manage_titie" style="margin-top: 30px; margin-left: 5px"><a href="'.$teacher_page.'">'.$teacher['name'].'老师</a></div>';
                 echo '<div class="auto_manage_content" style="margin-top: 5px; margin-left: 5px">';
-                echo '<a href="'.$teacher['url'].'">'.$teacher['info'].'</a>';
+                echo '<a href="'.$teacher_page.'">'.$teacher['info'].'</a>';
                 echo '</div> ';
 
                 echo '<div class="row" style="margin: 0px; margin-top:20px">';
                 echo '<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding:0">';
                 echo '<div style="background-color:#FFFFFF; padding: 30px; padding-top:1px">';
             } else {
+                $teacher_page = 'teacher_detail.php?id='.$teacher['id']; //也可以用 $teacher['url']
                 echo '<div class="teacher_title">';
-                echo '<a href="'.$teacher['url'].'">'.$teacher['name'].'老师</a>';
+                echo '<a href="'.$teacher_page.'">'.$teacher['name'].'老师</a>';
                 echo '</div>';
                 echo '<div class="teacher_content">';
-                echo '<a href="'.$teacher['url'].'">'.$teacher['info'].'</a>';
+                echo '<a href="'.$teacher_page.'">'.$teacher['info'].'</a>';
                 echo '</div>';
             }
             $i++;
@@ -122,7 +134,7 @@
         echo '</div>';
     ?>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 right">
-        	<div class="right_title">加入我们</div>
+        	<div class="right_title">关注我们</div>
             <img src="image/erweima.jpg" width="170" style="margin:20px"/>
             <div class="right_title">微信消息</div>
             <div class="weixin_content seamless allowStop">
@@ -145,6 +157,7 @@
     ellipsis('teacher_content', 'a');
     ellipsis('auto_manage_content', 'a');
     ellipsis('weixin_content_in', 'a');
+    ellipsis('header_info_text', 'a');
 
     (function(c){
     var obj=document.getElementsByTagName("div");

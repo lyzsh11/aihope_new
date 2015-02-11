@@ -52,7 +52,7 @@ if (isset($_POST["loginsubmit"])) {
         ."', '"
         .$_POST["nick"]
         ."', NOW(), NOW(), 3)";
-        //permission: 1--可读; 2--可推荐老师; 4--可添加微信内容 ...
+        //permission: 见db.php: 1--可读; 2--可推荐老师; 4--可添加微信内容和银行流水log ... 
         $dbres = mysql_query($sql, $db_con);
         mysql_close($db_con);
         if (!$dbres) {
@@ -113,6 +113,7 @@ function show_hide(id1,id2){
         	<input style="float:left; margin-top:8px" type="radio" name="register_login" onClick="show_hide('register','login')" <?php echo $regradio ?>/><div class="radio_text">注册</div>
 			<input style="float:left; margin-top:8px" type="radio" name="register_login" onClick="show_hide('login','register')" <?php echo $loginradio ?>/><div class="radio_text">登录</div>
         </div>
+        <div class="text_warning" style="margin-top:15px">登陆后您可以推荐老师、添加评论，给予老师们更多的关心。</div>
         <form id="register" class="content" style="background: #fff; margin-top:15px; display:<?php echo $reg ?>" action="" method=POST>
         <div class="row box_in">
         	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 left_tag">

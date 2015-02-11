@@ -1,10 +1,17 @@
 <?php
+$path="../";
 //print_r($_COOKIE);
 if(!isset($_COOKIE['userid'])) {
     $jumpdest = "add_teacher.php";
     require("login_register.php");
 } else {
     //TODO: 检查用户的权限  
+    require_once ($path."db.php") ;
+    $db_con = @mysql_connect($dbhost, $dbuser, $dbpasswd) or die;
+    @mysql_select_db($dbname);
+    $uid = $_COOKIE['userid'];
+    $requiredperm = $PERM_POST;
+    require("check_perm.php");
 
     $defaultpic = "http://www.aihope.org/web/wcx/teaching1.jpg";
     if(isset($_POST["fileupload"])) {
@@ -49,7 +56,7 @@ if(!isset($_COOKIE['userid'])) {
 <body style="background: #dbdcd1">
 <div class="container">
 	<iframe src="header.php" scrolling="no" frameborder="0" width="100%" class="iframe_header"></iframe>
-    <div style=" margin: 0px; padding-top:5px; padding-bottom:30px">
+    <div style=" margin: 0px; padding-top:15px; padding-bottom:30px">
     	<div class="title">> 推荐老师</div>
         <form enctype="multipart/form-data" action="" method=POST class="content" style="background: #FFFFFF; margin-top:10px">
         <div class="row box_in">
@@ -78,7 +85,7 @@ if(!isset($_COOKIE['userid'])) {
             	老师姓名：
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content_input">     
-                <input type="text" class="form-control" size=20 name=teacher_name/>
+                <input type="text" class="form-control" size=20 name=teacher_name />
             </div>
         </div>
         <div class="row box_in">
@@ -86,7 +93,7 @@ if(!isset($_COOKIE['userid'])) {
                 老师ID：
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content_input">     
-                <input type="text" class="form-control" size=20 name=path value="<?php echo $_POST["path"] ?>"/>
+                <input type="text" class="form-control" size=20 name=path value="<?php echo $_POST["path"] ?>" />
             </div>
         </div>
         <div class="row box_in">
@@ -94,7 +101,7 @@ if(!isset($_COOKIE['userid'])) {
             	捐赠链接:
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content_input">     
-                <input type="text" class="form-control" size=100 name=shopurl value="http://wd.koudai.com/?userid=208388189"/>
+                <input type="text" class="form-control" size=100 name=shopurl value="http://wd.koudai.com/?userid=208388189" />
             </div>
         </div>
         <div class="row box_in">
@@ -110,7 +117,7 @@ if(!isset($_COOKIE['userid'])) {
                 银行账号：
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content_input">     
-                <input type="text" class="form-control" size=20 name=bankacc/>
+                <input type="text" class="form-control" size=20 name=bankacc />
             </div>
         </div>
         <div class="row box_in">
@@ -118,7 +125,7 @@ if(!isset($_COOKIE['userid'])) {
                 开户银行名称：
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content_input">     
-                <input type="text" class="form-control" size=20 name=bankname/>
+                <input type="text" class="form-control" size=20 name=bankname />
             </div>
         </div>
         <div class="row box_in">
@@ -126,7 +133,7 @@ if(!isset($_COOKIE['userid'])) {
             	执教地点:
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content_input">     
-                <input type="text" class="form-control" size=20 name=position/>
+                <input type="text" class="form-control" size=20 name=position />
             </div>
         </div>
         <div class="row box_in">
@@ -134,7 +141,7 @@ if(!isset($_COOKIE['userid'])) {
             	事迹摘要:
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content_input">     
-                <input type="text" class="form-control" size=20 name=summary/>
+                <input type="text" class="form-control" size=20 name=summary />
             </div>
         </div>
         <div class="row box_in">
@@ -142,7 +149,7 @@ if(!isset($_COOKIE['userid'])) {
             	事迹链接:
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content_input">     
-                <input type="text" class="form-control" size=20 name=link/>
+                <input type="text" class="form-control" size=20 name=link />
             </div>
         </div>
         <div class="row box_in">
@@ -159,7 +166,8 @@ if(!isset($_COOKIE['userid'])) {
           </label>
         </div>
         <div class="box_in">
-        	<input type="submit" class="btn btn-default" value="提交" name=addteacher/>
+        	<input type="submit" class="btn btn-default" value="推荐新老师" name=addteacher />
+        	<!--input type="submit" class="btn btn-default" value="修改以前推荐的信息" name=moditeacherinfo /-->
         </div>
         </form>
     </div>

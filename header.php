@@ -13,10 +13,12 @@
   <img src="image/logo.png" class="logo"/>
   <div class="text">
     <?php if(isset($_COOKIE['userid'])) {
-            ?><a target="_parent" href="logout.php">登出</a>
+            ?>
+        <a target="_parent" href="modi_passwd.php">修改密码</a>/
+	<a target="_parent" href="logout.php">登出</a>
     <?php } else { ?>
         <a target="_parent" href="login_register.php?t=1">注册</a>/
-        <a target="_parent" href="login_register.php?t=2">登陆</a>
+        <a target="_parent" href="login_register.php?t=2">登录</a>
     <?php } ?>
   </div>
 </div>
