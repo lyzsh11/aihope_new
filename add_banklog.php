@@ -8,13 +8,27 @@ if(!isset($_COOKIE['userid'])) {
     require_once ($path."db.php");
 	$db_con = @mysql_connect($dbhost, $dbuser, $dbpasswd) or die;
 	@mysql_select_db($dbname);
-    //TODO: 检查用户的权限  
-    $uid = $_COOKIE['userid'];
+
+        $sql="select id,name from teacher";
+        $dbres = mysql_query($sql, $db_con);
+	$teachername = array();
+        while($items = (mysql_fetch_array($dbres))) {
+		$teachername[$items['name']] = $items['id'];
+                if ($items['name'] == "王成霞") {
+                    $teachername["王兴院"] = $items['id'];
+                } else if ($items['name'] == "吴孟花") {
+                    $teachername["吴梦花"] = $items['id'];
+                } else if (strpos($items['name'], "行知") != FALSE) {
+                    $teachername["行知"] = $items['id'];
+                }
+	}
+        //检查用户的权限  
+        $uid = $_COOKIE['userid'];
 	$requiredperm = $PERM_POST;
 	//echo "DEBUG 1<br>";
 	require("check_perm.php");
 
-    if(isset($_POST["addbanklog"])) {
+        if(isset($_POST["addbanklog"])) {
 		//echo $_POST["bankcontent"];
 		//echo "DEBUG 1<br>";
 		$succ = true;
@@ -101,7 +115,13 @@ if(!isset($_COOKIE['userid'])) {
 				}
 				$last = $nowtotal;
 				$memo = implode($items); //range($items, 5, count($items)-1));
-				if(strstr($memo,"王成霞")>0)$payee=2;else if(strstr($memo,"吴孟花")>0)$payee=15;else if(strstr($memo,"行知")>0)$payee=37;else $payee=1;
+				//if(strstr($memo,"王成霞")>0)$payee=2;else if(strstr($memo,"吴孟花")>0)$payee=15;else if(strstr($memo,"行知")>0)$payee=37;else $payee=1;
+                                foreach($teachername as $tname => $tid) {
+                                    if (strpos($memo, $tname) != FALSE) {
+                                        $payee = $tid;
+                                        break;
+                                    }
+                                }
 				//$x=`echo $t | /bin/awk 'BEGIN{last=0;}{ money=100*$3;if($4<last)money=-money; last=$4;memo=$6;for(i=7;i<=NF;i++)memo=memo" "$i; if(index(memo,"王成霞")>0)payee=2;else if(index(memo,"吴孟花")>0)payee=15;else if(index(memo,"行知")>0)payee=37;else payee=1;channel=substr($5,1,4); print "insert into bankdeal (time, money, payee, dealername, dealtype, memo) values (\""$1,$2"\","money","payee",\"\",\""channel"\",\"",memo"\");"}'`;
 				$sql = "insert into bankdeal (time, money, payee, dealername, dealtype, memo) values (\"".$time."\",".$money.",".$payee.",\"\",\"".$channel."\",\" ".$memo."\");";
 				echo "<tr><td>$i</td>";
