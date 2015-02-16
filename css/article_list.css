@@ -16,28 +16,26 @@
 	background: url(../image/text_h2.png) bottom no-repeat;
 }
 
-.content {
-	margin-top: 15px;
-	padding-bottom: 30px;
+.article_title {
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-	font-size: 19px;
+	font-size: 14px;
 	color: #220f00;
 	letter-spacing: 2px;
-	line-height: 30px;
-	font-weight: 500;
+	font-weight: bold;
+	text-decoration: none;
 }
 
-.content a {
+.article_title a {
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-	font-size: 19px;
+	font-size: 14px;
 	color: #220f00;
 	letter-spacing: 2px;
-	line-height: 30px;
-	text-decoration: underline;
+	font-weight: bold;
+	text-decoration: none;
 }
 
-.content a:hover {
-	color:#FF8600;
+.article_title a:hover {
+	color: #7c9c64;
 }
 
 @media (max-width:1199px) {

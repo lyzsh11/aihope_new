@@ -211,11 +211,28 @@ li:hover {
 
 
 .header_info_text {
+	height: 25px;
+	width: auto;
+	overflow: hidden;
 	font-family: 微软雅黑;
 	color: rgba(20,75,68,1.00);
 	font-size: 15px;
 	letter-spacing: 1px;
 	text-decoration: none;
+}
+
+
+.header_info_text a {
+	font-family: 微软雅黑;
+	color: rgba(20,75,68,1.00);
+	font-size: 15px;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+
+.header_info_text a:hover {
+	text-decoration: underline;
 }
 
 .image_banner {

@@ -77,7 +77,7 @@ if (isset($_POST["comment"])) {
         	<img src="<?php echo $teacherInfo['pic'] ?>" class="content_image"/><br>
                 <?php echo $teacherInfo['infopage'] ?>
     	</div>
-        <div class="comment" style="background: #FFFFFF">
+        <div class="comment" style="background: #FFFFFF; margin-top:30px">
         	<div class="comment_title">评论</div>
 
             <?php
@@ -93,14 +93,17 @@ if (isset($_POST["comment"])) {
                          echo '<div class="line_gray"></div>';
                     }
 
-                    echo '<div class="comment_box">';
-                    echo $comment['info'].'<br>';
-                    echo '<a style="float:left; margin-top:10px" href="#">'.$comment['user_id'].'</a>';
+                    echo '<div style="margin-top: 20px; overflow:hidden">';
+                    echo '<div style="float:left"><img src="image/default_user_image.png" class="user_image"/></div>';
+                    echo '<div class="comment_box" style="float: left; margin-left: 20px">';
+                    echo '<a style="margin-top:10px" href="#">'.$comment['user_id'].'</a><br>';
+                    echo '<p style="margin-top:5px; font-size:15px">'.$comment['info'].'<br></p>';
+                    echo $comment['time'];
                     if ($_COOKIE["userid"] == $comment['user_id']) {
-                        echo '<a style="float:left; margin-left:5px; margin-top:10px" href="'.$dir.'delete_comment.php?comment_id='.$comment['id'].'&url=teacher_detail.php&tid='.$teacherID.'">删除</a>';
+                        echo ' | <a href="'.$dir.'delete_comment.php?comment_id='.$comment['id'].'&url=teacher_detail.php&tid='.$teacherID.'">删除</a>';
                     }
-                    echo '<div style="float:right; margin-right:5px; margin-top:10px">'.$comment['time'].'</div>';
-                    echo '<br></div>';
+                    echo '</div>';
+                    echo '</div>';
 
                     $i ++;
                 }

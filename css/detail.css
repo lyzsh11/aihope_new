@@ -61,15 +61,13 @@
 
 .comment_title {
 	height: 40px;
-	border-bottom: #636363 thin solid;
+	border-bottom: #88b68d medium solid;
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-	font-size: 28px;
+	font-size: 24px;
 	letter-spacing: 4px;
 }
 
 .comment_box {
-	margin-top: 20px;
-	padding: 5px;
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	font-size: 13px;
 }
@@ -93,6 +91,11 @@
 .comment_post {
 	margin-top: 20px;
 	padding: 6px;
+}
+
+.user_image {
+	width:60px;
+	height:60px;
 }
 
 @media (max-width:1199px) {
@@ -123,5 +126,9 @@
 }
 .content_image {
 	width: 300px;
+}
+.user_image {
+	width: 40px;
+	height: 40px;
 }
 }

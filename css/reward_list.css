@@ -6,7 +6,7 @@
 
 .title {
 	width:609px;
-	height:40px;
+	height:45px;
 	overflow:hidden;
 	background: url(../image/text_h2.png) bottom no-repeat;
 	font-size: 20px;
@@ -120,6 +120,13 @@
 @media (max-width:767px){
 .iframe_header {
 	height:95px;
+}
+
+.title {
+	width: 280px;
+	margin-right: 20px;
+	font-size: 20px;
+	height: 40px;
 }
 
 .title_h1 a {

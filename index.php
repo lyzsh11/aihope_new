@@ -51,6 +51,7 @@
             echo '<div class="header_info_text" style="margin-top: 10px">';
             echo '<img src="image/notify_icon.png" style="float:left" height=20/>';
             echo '<a href="'.$article['link'].'" style="margin-left:20px">'.$article['title'].'</a>';
+            echo '<a href="article_list.php" style="margin-left:20px">>>查看更多>></a>';
             echo '</div>';
             break;
         }
@@ -66,17 +67,16 @@
                     while($teacher = (mysql_fetch_array($dbres))) {
                          if ($i >= 0) {
                             $teacher_page = 'teacher_detail.php?id='.$teacher['id']; //也可以用 $teacher['url']
+                            echo '<script language="javascript">addProgress(\''.$teacher_page.'\','.$teacher['moneyDone'].','.$teacher['moneyNeed'].',\''.$teacher['name'].'老师\',\''.$teacher['info'].'\');</script>';
                             if ($i == 0) {
                                 echo '<p id="pic'.$i.'" style="display:block;  width: inherit">';
                                 //echo '<a href="'.$teacher['url'];
                                 echo '<a href="'.$teacher_page;
-                                echo '"><img src="'.$teacher['picBanner'].'" class="image_banner" onload="initProgress(\''.$teacher_page.'\','
-                                    .$teacher['moneyDone'].','.$teacher['moneyNeed'].',\''.$teacher['name'].'老师\',\''.$teacher['info'].'\')"/></a>';
+                                echo '"><img src="'.$teacher['picBanner'].'" class="image_banner"/></a>';
                                 echo '</p>';
                             } else {
                                 echo '<p id="pic'.$i.'" style="display:none">';
-                                echo '<a href="'.$teacher_page.'"><img src="'.$teacher['picBanner'].'" class="image_banner" onload="initProgress(\''.$teacher_page.'\','
-                                    .$teacher['moneyDone'].','.$teacher['moneyNeed'].',\''.$teacher['name'].'老师\',\''.$teacher['info'].'\')"/></a>';
+                                echo '<a href="'.$teacher_page.'"><img src="'.$teacher['picBanner'].'" class="image_banner"/></a>';
                                 echo '</p>';
                             }
                         }
@@ -158,6 +158,7 @@
     ellipsis('auto_manage_content', 'a');
     ellipsis('weixin_content_in', 'a');
     ellipsis('header_info_text', 'a');
+    setProgress(0);
 
     (function(c){
     var obj=document.getElementsByTagName("div");

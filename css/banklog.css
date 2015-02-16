@@ -40,6 +40,33 @@
 	color:#FF8600;
 }
 
+.titie_1 {
+	height: 30px;
+}
+
+.title_1 a {
+	font-family: "微软雅黑";
+	color: #3d9670;
+	font-size: 17px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+title_1 a:hover {
+	text-decoration: underline;
+}
+
+.content_1 {
+	overflow: hidden;
+	font-family: "微软雅黑";
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
 @media (max-width:1199px) {
 .iframe_header {
 	height:100px;
