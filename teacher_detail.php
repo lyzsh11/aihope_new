@@ -133,7 +133,7 @@ if (isset($_POST["comment"])) {
                 <?php 
                     echo "<input type=hidden name=id value=\"$teacherID\" />";
                     if (!isset($_COOKIE['userid'])) {
-                        echo '|请先<a target="_parent" href="../aihope/login_register.php?t=2">登录</a><br>';
+                        echo '|请先<a target="_parent" href="login_register.php?t=2&jumpdest=teacher_detail.php?'.$_SERVER['QUERY_STRING'].'">登录</a><br>';
                     }
                 ?>
                 <textarea class="form-control" rows=10 name=content style="margin-top:5px"></textarea>
