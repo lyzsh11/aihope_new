@@ -1,0 +1,153 @@
+﻿/* CSS Document */
+.iframe_header {
+	height:150px;
+	overflow:hidden;
+}
+
+.title {
+	width:609px;
+	height:45px;
+	overflow:hidden;
+	font-size: 24px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	letter-spacing: 5px;
+	overflow: hidden;
+	background: url(../image/text_h2.png) bottom no-repeat;
+}
+
+.user_image {
+	width:70px;
+	height:70px;
+}
+
+.user_info_text {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.user_record {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.user_record a {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.user_record a:hover {
+	text-decoration: underline;
+}
+
+.subtitle {
+	font-family: 微软雅黑;
+	height: 35px;
+	color: #193104;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	border-bottom: #88b68d medium solid;
+}
+
+.teacher_box {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.teacher_title {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.teacher_title a {
+	font-family: 微软雅黑;
+	color: #193104;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+
+.teacher_title a:hover {
+	text-decoration: underline;
+}
+
+.line {
+	border-top: #AAA thin dotted;
+}
+
+.teacher_content {
+	height: 60px;
+	overflow: hidden;
+	font-family: 微软雅黑;
+	color: #888;
+	font-size: 13px;
+	letter-spacing: 1px;
+}
+
+.teacher_content a {
+	font-family: 微软雅黑;
+	color: #888;
+	font-size: 13px;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+.teacher_content a:hover {
+	color: #666;
+}
+
+@media (max-width:1199px) {
+.iframe_header {
+	height:100px;
+}
+}
+
+@media (max-width:991px) {
+.iframe_header {
+	height:98px;
+}
+
+.right {
+	margin-top: 15px;
+}
+
+.subtitle {
+	height: 28px;
+}
+
+}
+
+@media (max-width:767px) {
+.iframe_header {
+	height:95px;
+}
+
+.user_image {
+	width:60px;
+	height:70px;
+}
+
+.title {
+	width: 280px;
+	margin-right: 20px;
+	font-size: 20px;
+	height: 40px;
+}
+}

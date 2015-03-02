@@ -68,6 +68,8 @@
 }
 
 .comment_box {
+	width: 980px;
+	overflow: hidden;
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	font-size: 13px;
 }
@@ -102,6 +104,10 @@
 .iframe_header {
 	height:100px;
 }
+
+.comment_box {
+	width: 850px;
+}
 }
 
 @media (max-width:991px) {
@@ -112,23 +118,34 @@
 .content_image {
 	width: 500px;
 }
+
+.content_image {
+	width: 630px;
+}
 }
 
 @media (max-width:767px){
 .iframe_header {
 	height:98px;
 }
+
 .title {
 	width: 280px;
 	margin-right: 20px;
 	font-size: 20px;
 	height: 40px;
 }
+
 .content_image {
 	width: 300px;
 }
+
 .user_image {
 	width: 40px;
 	height: 40px;
+}
+
+.comment_box {
+	width: 220px;
 }
 }

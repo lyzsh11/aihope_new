@@ -10,7 +10,7 @@ if(!isset($_COOKIE['userid'])) {
     $db_con = @mysql_connect($dbhost, $dbuser, $dbpasswd) or die;
     @mysql_select_db($dbname);
     $uid = $_COOKIE['userid'];
-    $requiredperm = $PERM_POST;
+    $requiredperm = $PERM_RECM;
     require("check_perm.php");
 
     $defaultpic = "http://www.aihope.org/web/wcx/teaching1.jpg";
